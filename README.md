@@ -70,6 +70,6 @@ MATCH (a:Tweet), (b:Tweet)
 where a.username = b.username and a <> b
 with a, b, distance(point({longitude:a.lng, latitude:a.lat}), point({longitude:b.lng, latitude:b.lat}))/1000 as km
 return distinct  a.nickname, max(km) as maxdist
-order by maxdist
+order by maxdist desc
 limit 25
 ```
