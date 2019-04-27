@@ -2,6 +2,8 @@
 https://github.com/datsoftlyngby/soft2019spring-databases/blob/master/assignments/assignment12.md
 ## Setup
 
+> Just forget about importing you data your self, it takes a long time
+
 ```
 sudo docker run  -d --name neo4j --rm --publish=7474:7474 --publish=7687:7687 --env NEO4J_AUTH=neo4j/fancy99Doorknob neo4j
 
@@ -36,6 +38,7 @@ create (tweet:Tweet {
                 | right(m,size(m)-1))
     })
 ```
+Took 17 sec
 
 ### Exercise 2
 
@@ -47,6 +50,7 @@ unwind n.mentions as name
 with distinct name
 create (t:Tweeters{name: name})
 ```
+Fast
 
 Create a relation "Tweeted" between Tweeters and Tweet.
 
@@ -55,4 +59,6 @@ match (tweeters:Tweeters), (tweet:Tweet)
 where tweeters.name in tweet.mentions 
 create (tweeters)-[:MENTIONED_IN]->(tweet)
 ```
+
+It takes a long time `Created 40940 relationships, completed after 4416147 ms.`
 
