@@ -38,7 +38,7 @@ create (tweet:Tweet {
                 | right(m,size(m)-1))
     })
 ```
-Took 17 sec
+Took 8 sec
 
 ### Exercise 2
 
@@ -50,7 +50,7 @@ unwind n.mentions as name
 with distinct name
 create (t:Tweeters{name: name})
 ```
-Fast
+Took < 1 sek
 
 Create a relation "Tweeted" between Tweeters and Tweet.
 
