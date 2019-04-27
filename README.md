@@ -30,8 +30,8 @@ create (tweet:Tweet {
 	username: row.`User Name`,
     nickname: row.Nickname,
     bioPlace: row.`Place (as appears on Bio)`,
-    lat: toInteger(row.Latitude),
-    lng: toInteger(row.Longitude),
+    lat: toFloat(row.Latitude),
+    lng: toFloat(row.Longitude),
     content: row.`Tweet content`,
     mentions: extract( m in 
                 filter(m in split(row.`Tweet content`," ") where m starts with "@" and size(m) > 1) 
