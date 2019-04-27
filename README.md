@@ -73,3 +73,20 @@ return distinct  a.nickname, max(km) as maxdist
 order by maxdist desc
 limit 25
 ```
+
+Took 125 sek
+
+Result:
+```
+a.nickname	maxdist
+"googuns_lulz"	1287.6876134860725
+"tmj_GBR_mgmt"	1101.2776468134407
+"outonashout"	1030.581425638201
+"MarsBots"	975.1571836022507
+"x333xxx"	933.3654495465886
+"TangoRaindrop"	893.9492533669937
+"FoodTouristBlog"	893.9492533669937
+"thursobhoy"	877.5142365743104
+"Dazzathfc1882"	877.5142365743104
+"ashleypratt"	876.6924197540286
+```
